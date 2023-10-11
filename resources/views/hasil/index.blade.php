@@ -1,15 +1,15 @@
 @include('layouts.header_admin')
 
 <div class="d-sm-flex align-items-center justify-content-between mb-4">
-    <h1 class="h3 mb-0 text-gray-800"><i class="fas fa-fw fa-chart-area"></i> Data Hasil Akhir</h1>
+    <h1 class="h3 mb-0 text-gray-800"> Data Hasil Akhir</h1>
 	
-    <a href="{{ url('Laporan') }}" class="btn btn-primary"> <i class="fa fa-print"></i> Cetak Data </a>
+    <a href="{{ url('Laporan') }}" class="btn btn-primary">Cetak Data </a>
 </div>
 
 <div class="card shadow mb-4">
     <!-- /.card-header -->
     <div class="card-header py-3">
-        <h6 class="m-0 font-weight-bold text-primary"><i class="fa fa-table"></i> Hasil Akhir Perankingan</h6>
+        <h6 class="m-0 font-weight-bold text-primary"> Hasil Akhir Perankingan</h6>
     </div>
 
     <div class="card-body">

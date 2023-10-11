@@ -1,9 +1,7 @@
 @include('layouts.header_admin')
 
 <div class="d-sm-flex align-items-center justify-content-between mb-4">
-    <h1 class="h3 mb-0 text-gray-800"><i class="fas fa-fw fa-cube"></i> Data Aspek</h1>
-
-    <a href="{{ url('Aspek/tambah') }}" class="btn btn-success"> <i class="fa fa-plus"></i> Tambah Data </a>
+    <h1 class="h3 mb-0 text-gray-800"></i> Data Aspek</h1> 
 </div>
 
 @if (session('message'))
@@ -13,7 +11,10 @@
 <div class="card shadow mb-4">
     <!-- /.card-header -->
     <div class="card-header py-3">
-        <h6 class="m-0 font-weight-bold text-primary"><i class="fa fa-table"></i> Daftar Data Aspek</h6>
+        <div class="row">
+            <h6 class="m-0 font-weight-bold text-primary"><i class="fa fa-table"></i> Daftar Data Aspek</h6>
+            <a href="{{ url('Aspek/tambah') }}" class="btn btn-success">Tambah Data </a>
+        </div>
     </div>
 
     <div class="card-body">

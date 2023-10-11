@@ -26,72 +26,65 @@
     <!-- Page Wrapper -->
     <div id="wrapper">
         <!-- Sidebar -->
-        <ul class="navbar-nav bg-gradient-primary sidebar sidebar-dark accordion" id="accordionSidebar">
+        <ul class="navbar-nav bg-gradient-secondary sidebar sidebar-dark accordion" id="accordionSidebar">
             <!-- Sidebar - Brand -->
-            <a class="sidebar-brand d-flex align-items-center justify-content-center" href="{{ url('Dashboard') }}">
-                <div class="sidebar-brand-icon rotate-n-15">
-                    <i class="fas fa-database"></i>
-                </div>
-                <div class="sidebar-brand-text mx-3">SPK PM</div>
+            <a class="sidebar-brand d-flex justify-content-center" href="{{ url('Dashboard') }}">
+                
+                <div class="sidebar-brand-text">SDN 73</div>
             </a>
             <!-- Divider -->
+            <hr class="sidebar-divider my-0">
+
+            <li class="nav-item">
+                <a class="nav-link">
+                    <span>
+                        {{ session('log.nama') }}
+                    </span>
+                </a>
+            </li>
+
             <hr class="sidebar-divider my-0">
 
             <!-- Nav Item - Dashboard -->
             <li class="nav-item {{ $page == 'Dashboard' ? 'active' : '' }}">
                 <a class="nav-link" href="{{ url('Dashboard') }}">
-                    <i class="fas fa-fw fa-home"></i>
                     <span>Dashboard</span>
                 </a>
             </li>
 
-            <!-- Divider -->
-            <hr class="sidebar-divider">
-
-            <!-- Heading -->
-            <div class="sidebar-heading">
-                Master Data
-            </div>
-
             @if(session('log.id_user_level') == '1')
             <li class="nav-item {{ $page == 'Aspek' ? 'active' : '' }}">
                 <a class="nav-link" href="{{ url('Aspek') }}">
-                    <i class="fas fa-fw fa-cube"></i>
                     <span>Data Aspek</span>
                 </a>
             </li>
 
             <li class="nav-item {{ $page == 'Kriteria' ? 'active' : '' }}">
                 <a class="nav-link" href="{{ url('Kriteria') }}">
-                    <i class="fas fa-fw fa-cubes"></i>
                     <span>Data Kriteria</span>
                 </a>
             </li>
 
             <li class="nav-item {{ $page == 'Alternatif' ? 'active' : '' }}">
                 <a class="nav-link" href="{{ url('Alternatif') }}">
-                    <i class="fas fa-fw fa-users"></i>
                     <span>Data Alternatif</span>
                 </a>
             </li>
 
             <li class="nav-item {{ $page == 'Penilaian' ? 'active' : '' }}">
                 <a class="nav-link" href="{{ url('Penilaian') }}">
-                    <i class="fas fa-fw fa-edit"></i>
                     <span>Data Penilaian</span>
                 </a>
             </li>
 
             <li class="nav-item {{ $page == 'Perhitungan' ? 'active' : '' }}">
                 <a class="nav-link" href="{{ url('Perhitungan') }}">
-                    <i class="fas fa-fw fa-calculator"></i>
                     <span>Data Perhitungan</span>
                 </a>
             </li>
 
             <li class="nav-item {{ $page == 'Hasil' ? 'active' : '' }}">
                 <a class="nav-link" href="{{ url('Hasil') }}">
-                    <i class="fas fa-fw fa-chart-area"></i>
                     <span>Data Hasil Akhir</span>
                 </a>
             </li>
@@ -100,24 +93,14 @@
             @if(session('log.id_user_level') == '2')
             <li class="nav-item {{ $page == 'Hasil' ? 'active' : '' }}">
                 <a class="nav-link" href="{{ url('Hasil') }}">
-                    <i class="fas fa-fw fa-chart-area"></i>
                     <span>Data Hasil Akhir</span>
                 </a>
             </li>
             @endif
-            
-            <!-- Divider -->
-            <hr class="sidebar-divider">
-
-            <!-- Heading -->
-            <div class="sidebar-heading">
-                Master User
-            </div>
 
             @if(session('log.id_user_level') == '1')
             <li class="nav-item {{ $page == 'User' ? 'active' : '' }}">
                 <a class="nav-link" href="{{ url('User') }}">
-                    <i class="fas fa-fw fa-users-cog"></i>
                     <span>Data User</span>
                 </a>
             </li>
@@ -125,18 +108,18 @@
 
             <li class="nav-item {{ $page == 'Profile' ? 'active' : '' }}">
                 <a class="nav-link" href="{{ url('Profile') }}">
-                    <i class="fas fa-fw fa-user"></i>
                     <span>Data Profile</span>
                 </a>
             </li>
 
-            <!-- Divider -->
-            <hr class="sidebar-divider d-none d-md-block">
+            <hr class="sidebar-divider my-0">
 
-            <!-- Sidebar Toggler (Sidebar) -->
-            <div class="text-center d-none d-md-inline">
-                <button class="rounded-circle border-0" id="sidebarToggle"></button>
-            </div>
+            <li class="nav-item">
+                <a class="nav-link" href="{{ url('Login') }}">
+                    Logout
+                </a>
+            </li>
+            
             </ul>
             <!-- End of Sidebar -->
 
@@ -148,41 +131,7 @@
 
                     <!-- Topbar -->
                     <nav class="navbar navbar-expand navbar-light bg-white topbar mb-4 static-top shadow">
-
-                        <!-- Sidebar Toggle (Topbar) -->
-                        <button id="sidebarToggleTop" class="btn text-primary d-md-none rounded-circle mr-3">
-                            <i class="fa fa-bars"></i>
-                        </button>
-
-                        <!-- Topbar Navbar -->
-                        <ul class="navbar-nav ml-auto">
-
-                            <!-- Nav Item - User Information -->
-                            <li class="nav-item dropdown no-arrow">
-                                <a class="nav-link dropdown-toggle" href="#" id="userDropdown" role="button" data-toggle="dropdown"
-                                    aria-haspopup="true" aria-expanded="false">
-                                    <span class="text-uppercase mr-2 d-none d-lg-inline text-gray-600 small">
-                                        {{ session('log.nama') }}
-                                    </span>
-                                    <img src="{{ asset('img/user.png') }}" class="img-profile rounded-circle">
-                                </a>
-                                <!-- Dropdown - User Information -->
-                                <div class="dropdown-menu dropdown-menu-right shadow animated--grow-in"
-                                    aria-labelledby="userDropdown">
-                                    <a class="dropdown-item" href="{{ url('Profile') }}">
-                                        <i class="fas fa-user fa-sm fa-fw mr-2 text-gray-400"></i>
-                                        Profile
-                                    </a>
-                                    <div class="dropdown-divider"></div>
-                                    <a class="dropdown-item" href="#" data-toggle="modal" data-target="#logoutModal">
-                                        <i class="fas fa-sign-out-alt fa-sm fa-fw mr-2 text-gray-400"></i>
-                                        Logout
-                                    </a>
-                                </div>
-                            </li>
-
-                        </ul>
-
+                        <marquee><h4>Sistem Pendukung Keputusan Pemilihan Guru Terbaik SDN 73 Kota Bengkulu</h4></marquee>
                     </nav>
                     <!-- End of Topbar -->
 

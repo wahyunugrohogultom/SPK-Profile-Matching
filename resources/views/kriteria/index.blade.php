@@ -1,7 +1,7 @@
 @include('layouts.header_admin')
 
 <div class="d-sm-flex align-items-center justify-content-between mb-4">
-    <h1 class="h3 mb-0 text-gray-800"><i class="fas fa-fw fa-cubes"></i> Data Kriteria</h1>
+    <h1 class="h3 mb-0 text-gray-800"></i> Data Kriteria</h1>
 </div>
 
 {!! session('message') !!}
@@ -26,9 +26,9 @@
     <!-- /.card-header -->
     <div class="card-header py-3">
         <div class="d-sm-flex align-items-center justify-content-between">
-            <h6 class="m-0 font-weight-bold text-primary"><i class="fa fa-table"></i> {{ $key->keterangan }} ({{ $key->kode_aspek }})</h6>
+            <h6 class="m-0 font-weight-bold text-primary"> {{ $key->keterangan }} ({{ $key->kode_aspek }})</h6>
             
-            <a href="#tambah{{ $key->id_aspek }}" data-toggle="modal" class="btn btn-sm btn-success"> <i class="fa fa-plus"></i> Tambah Data </a>
+            <a href="#tambah{{ $key->id_aspek }}" data-toggle="modal" class="btn btn-sm btn-success"> Tambah Data </a>
         </div>
     </div>
     
@@ -36,7 +36,7 @@
         <div class="modal-dialog">
             <div class="modal-content">
                 <div class="modal-header">
-                    <h5 class="modal-title" id="myModalLabel"><i class="fa fa-plus"></i> Tambah {{ $key->keterangan }}</h5>
+                    <h5 class="modal-title" id="myModalLabel">Tambah {{ $key->keterangan }}</h5>
                     <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
                 </div>
                 <form action="{{ url('Kriteria/simpan') }}" method="POST">

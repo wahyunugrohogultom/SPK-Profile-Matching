@@ -7,7 +7,7 @@
     <meta name="description" content="">
     <meta name="author" content="">
 
-    <title>Sistem Pendukung Keputusan Metode PM</title>
+    <title>Sistem Pendukung Keputusan Pemilihan Guru Terbaik</title>
 
     <!-- Custom fonts for this template-->
     <link href="{{ asset('vendor/fontawesome-free/css/all.min.css') }}" rel="stylesheet" type="text/css">
@@ -22,7 +22,7 @@
 <body class="bg-gradient-primary">
     <nav class="navbar navbar-expand-lg navbar-dark bg-white shadow-lg pb-3 pt-3 font-weight-bold">
         <div class="container">
-            <a class="navbar-brand text-primary" style="font-weight: 900;" href="{{ url('/') }}"> <i class="fa fa-database mr-2 rotate-n-15"></i> Sistem Pendukung Keputusan Metode PM</a>
+            <a class="navbar-brand text-primary" style="font-weight: 900;" href="{{ url('/') }}"> <i class="fa fa-database mr-2 rotate-n-15"></i> Sistem Pendukung Keputusan Guru Terbaik Metode Profile Matching</a>
         </div>
     </nav>
 
@@ -32,7 +32,7 @@
             <div class="col-xl-6 col-lg-6 col-md-6 mt-5">
                 <div class="card bg-none o-hidden border-0 my-5 text-white" style="background: none;">
                     <div class="text-justify card-body p-0">
-                        <h4 style="font-weight: 800;">Sistem Pendukung Keputusan Metode PM</h4>
+                        <h4 style="font-weight: 800;">Sistem Pendukung Keputusan Guru Terbaik Metode Profile Matching</h4>
                         <p class="pt-4">
                             Sistem Pendukung Keputusan (SPK) merupakan sistem informasi interaktif yang menyediakan informasi, pemodelan, dan pemanipulasian data. Sistem itu digunakan untuk membantu pengambilan keputusan dalam situasi yang semi terstruktur dan situasi yang tidak terstruktur.
                         </p>

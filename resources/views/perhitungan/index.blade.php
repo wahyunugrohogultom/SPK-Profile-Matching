@@ -106,20 +106,20 @@ endforeach;
 ?>
 
 <div class="d-sm-flex align-items-center justify-content-between mb-4">
-    <h1 class="h3 mb-0 text-gray-800"><i class="fas fa-fw fa-calculator"></i> Data Perhitungan</h1>
+    <h1 class="h3 mb-0 text-gray-800"></i> Data Perhitungan</h1>
 </div>
 
 @foreach($aspeks as $aspek)
 <div class="card shadow mb-4">
     <!-- /.card-header -->
     <div class="card-header py-3">
-        <h6 class="m-0 font-weight-bold text-primary"><i class="fa fa-table"></i> Aspek <?= $aspek->keterangan?></h6>
+        <h6 class="m-0 font-weight-bold text-primary"> Aspek <?= $aspek->keterangan?></h6>
     </div>
 
     <div class="card-body">
 		<div class="table-responsive">
 			<table class="table table-bordered" width="100%" cellspacing="0">
-				<thead class="bg-primary text-white">
+				<thead class="bg-secondary text-white">
 					<tr align="center">
 						<th width="5%" rowspan="2">No</th>
 						<th>Alternatif</th>
@@ -163,13 +163,13 @@ endforeach;
 <div class="card shadow mb-4">
     <!-- /.card-header -->
     <div class="card-header py-3">
-        <h6 class="m-0 font-weight-bold text-primary"><i class="fa fa-table"></i> Pemetaan GAP Aspek <?= $aspek->keterangan?></h6>
+        <h6 class="m-0 font-weight-bold text-primary"> Pemetaan Nilai GAP Aspek <?= $aspek->keterangan?></h6>
     </div>
 
     <div class="card-body">
 		<div class="table-responsive">
 			<table class="table table-bordered" width="100%" cellspacing="0">
-				<thead class="bg-primary text-white">
+				<thead class="bg-secondary text-white">
 					<tr align="center">
 						<th width="5%" rowspan="2">No</th>
 						<th>Alternatif</th>
@@ -212,13 +212,13 @@ endforeach;
 <div class="card shadow mb-4">
     <!-- /.card-header -->
     <div class="card-header py-3">
-        <h6 class="m-0 font-weight-bold text-primary"><i class="fa fa-table"></i> Bobot Nilai GAP</h6>
+        <h6 class="m-0 font-weight-bold text-primary"> Bobot Nilai GAP</h6>
     </div>
 
     <div class="card-body">
 		<div class="table-responsive">
 			<table class="table table-bordered" width="100%" cellspacing="0">
-				<thead class="bg-primary text-white">
+				<thead class="bg-secondary text-white">
 					<tr align="center">
 						<th>Selisih</th>
 						<th>Nilai Bobot</th>
@@ -281,13 +281,13 @@ endforeach;
 <div class="card shadow mb-4">
     <!-- /.card-header -->
     <div class="card-header py-3">
-        <h6 class="m-0 font-weight-bold text-primary"><i class="fa fa-table"></i> Pembobotan Aspek <?= $aspek->keterangan?></h6>
+        <h6 class="m-0 font-weight-bold text-primary"> Pembobotan Aspek <?= $aspek->keterangan?></h6>
     </div>
 
     <div class="card-body">
 		<div class="table-responsive">
 			<table class="table table-bordered" width="100%" cellspacing="0">
-				<thead class="bg-primary text-white">
+				<thead class="bg-secondary text-white">
 					<tr align="center">
 						<th width="5%" rowspan="2">No</th>
 						<th>Alternatif</th>
@@ -331,13 +331,13 @@ endforeach;
 <div class="card shadow mb-4">
     <!-- /.card-header -->
     <div class="card-header py-3">
-        <h6 class="m-0 font-weight-bold text-primary"><i class="fa fa-table"></i> Perhitungan Aspek <?= $aspek->keterangan?></h6>
+        <h6 class="m-0 font-weight-bold text-primary">Perhitungan Aspek <?= $aspek->keterangan?></h6>
     </div>
 
     <div class="card-body">
 		<div class="table-responsive">
 			<table class="table table-bordered" width="100%" cellspacing="0">
-				<thead class="bg-primary text-white">
+				<thead class="bg-secondary text-white">
 					<tr align="center">
 						<th width="5%" rowspan="2">No</th>
 						<th>Alternatif</th>
@@ -385,13 +385,13 @@ endforeach;
 <div class="card shadow mb-4">
     <!-- /.card-header -->
     <div class="card-header py-3">
-        <h6 class="m-0 font-weight-bold text-primary"><i class="fa fa-table"></i> Perhitungan Total Semua Aspek</h6>
+        <h6 class="m-0 font-weight-bold text-primary">Perhitungan Total Semua Aspek</h6>
     </div>
 
     <div class="card-body">
 		<div class="table-responsive">
 			<table class="table table-bordered" width="100%" cellspacing="0">
-				<thead class="bg-primary text-white">
+				<thead class="bg-secondary text-white">
 					<tr align="center">
 						<th width="5%" rowspan="2">No</th>
 						<th>Alternatif</th>

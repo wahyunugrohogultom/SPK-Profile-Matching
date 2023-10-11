@@ -1,7 +1,7 @@
 @include('layouts.header_admin')
 
 <div class="d-sm-flex align-items-center justify-content-between mb-4">
-    <h1 class="h3 mb-0 text-gray-800"><i class="fas fa-fw fa-users-cog"></i> Data User</h1>
+    <h1 class="h3 mb-0 text-gray-800"> Data User</h1>
 
 	<a href="{{ url('User') }}" class="btn btn-secondary btn-icon-split"><span class="icon text-white-50"><i class="fas fa-arrow-left"></i></span>
 		<span class="text">Kembali</span>
@@ -10,7 +10,7 @@
 
 <div class="card shadow mb-4">
     <div class="card-header py-3">
-        <h6 class="m-0 font-weight-bold text-primary"><i class="fas fa-fw fa-edit"></i> Edit Data User</h6>
+        <h6 class="m-0 font-weight-bold text-primary">Edit Data User</h6>
     </div>
 	
     <form method="POST" action="{{ url('User/update/'.$user->id_user) }}">

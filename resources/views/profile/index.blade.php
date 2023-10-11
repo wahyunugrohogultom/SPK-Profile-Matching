@@ -1,7 +1,7 @@
 @include('layouts.header_admin')
 
 <div class="d-sm-flex align-items-center justify-content-between mb-4">
-    <h1 class="h3 mb-0 text-gray-800"><i class="fas fa-fw fa-user"></i> Data Profile</h1>
+    <h1 class="h3 mb-0 text-gray-800">Data Profile</h1>
 </div>
 
 @if(session('message'))
@@ -10,7 +10,7 @@
 
 <div class="card shadow mb-4">
     <div class="card-header py-3">
-        <h6 class="m-0 font-weight-bold text-primary"><i class="fas fa-fw fa-edit"></i> Edit Data Profile</h6>
+        <h6 class="m-0 font-weight-bold text-primary">Edit Data Profile</h6>
     </div>
 	
 	<form method="POST" action="{{ url('Profile/update/'.$profile->id_user) }}">

@@ -1,14 +1,14 @@
 @include('layouts.header_admin')
 
 <div class="d-sm-flex align-items-center justify-content-between mb-4">
-    <h1 class="h3 mb-0 text-gray-800"><i class="fas fa-fw fa-edit"></i> Data Penilaian</h1>
+    <h1 class="h3 mb-0 text-gray-800">Data Penilaian</h1>
 </div>
 
 {!! session('message') !!}
 
 <div class="card shadow mb-4">
     <div class="card-header py-3">
-        <h6 class="m-0 font-weight-bold text-primary"><i class="fa fa-table"></i> Daftar Data Penilaian</h6>
+        <h6 class="m-0 font-weight-bold text-primary"> Daftar Data Penilaian</h6>
     </div>
 
     <div class="card-body">
@@ -86,7 +86,7 @@
                         <div class="modal-dialog modal-lg">
                             <div class="modal-content">
                                 <div class="modal-header">
-                                    <h5 class="modal-title" id="myModalLabel"><i class="fa fa-edit"></i> Edit Penilaian</h5>
+                                    <h5 class="modal-title" id="myModalLabel"> Edit Penilaian</h5>
                                     <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
                                 </div>
                                 <form action="{{ url('Penilaian/edit') }}" method="post">
