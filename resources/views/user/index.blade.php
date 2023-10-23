@@ -2,8 +2,9 @@
 
 <div class="d-sm-flex align-items-center justify-content-between mb-4">
     <h1 class="h3 mb-0 text-gray-800"> Data User</h1>
-
-    <a href="{{ url('User/tambah') }}" class="btn btn-success"> Tambah Data </a>
+    @if(session('log.id_user_level') == '1')
+        <a href="{{ url('User/tambah') }}" class="btn btn-success"> Tambah User </a>
+    @endif
 </div>
 
 @if(session('message'))
@@ -23,7 +24,8 @@
                     <tr align="center">
                         <th width="5%">No</th>
                         <th>Nama</th>
-                        <th>E-mail</th>
+                        <th>NIP</th>
+                        <th>Tugas</th> 
                         <th>Username</th>
                         <th>Level</th>
                         <th width="15%">Aksi</th>
@@ -37,14 +39,19 @@
                     <tr align="center">
                         <td>{{ $no }}</td>
                         <td>{{ $data->nama }}</td>
-                        <td>{{ $data->email }}</td>
+                        <td>{{ $data->nip }}</td>
+                        <td>{{ $data->tugas }}</td>
                         <td>{{ $data->username }}</td>
                         <td>{{ $data->user_level }}</td>
                         <td>
                             <div class="btn-group" role="group">
-                                <a data-toggle="tooltip" data-placement="bottom" title="Detail Data" href="{{ url('User/detail', $data->id_user) }}" class="btn btn-primary btn-sm"><i class="fa fa-eye"></i></a>
-                                <a data-toggle="tooltip" data-placement="bottom" title="Edit Data" href="{{ url('User/edit', $data->id_user) }}" class="btn btn-warning btn-sm"><i class="fa fa-edit"></i></a>
-                                <a data-toggle="tooltip" data-placement="bottom" title="Hapus Data" href="{{ url('User/destroy', $data->id_user) }}" onclick="return confirm('Apakah anda yakin untuk menghapus data ini')" class="btn btn-danger btn-sm"><i class="fa fa-trash"></i></a>
+                                @if(session('log.id_user_level') == '1')
+                                    <a data-toggle="tooltip" data-placement="bottom" title="Detail User" href="{{ url('User/detail', $data->id_user) }}" class="btn btn-primary btn-sm"><i class="fa fa-eye"></i></a>
+                                @endif
+                                <a data-toggle="tooltip" data-placement="bottom" title="Edit User" href="{{ url('User/edit', $data->id_user) }}" class="btn btn-warning btn-sm"><i class="fa fa-edit"></i></a>
+                                @if(session('log.id_user_level') == '1')
+                                    <a data-toggle="tooltip" data-placement="bottom" title="Hapus User" href="{{ url('User/destroy', $data->id_user) }}" onclick="return confirm('Apakah anda yakin untuk menghapus data ini')" class="btn btn-danger btn-sm"><i class="fa fa-trash"></i></a>
+                                @endif
                             </div>
                         </td>
                     </tr>

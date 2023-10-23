@@ -19,8 +19,8 @@
 			<div class="row">
                 <input type="hidden" name="id_user" value="{{ $user->id_user }}">
 				<div class="form-group col-md-6">
-					<label class="font-weight-bold">E-Mail</label>
-					<input autocomplete="off" type="email" name="email" value="{{ $user->email }}" required class="form-control"/>
+					<label class="font-weight-bold">NIP</label>
+					<input autocomplete="off" type="number" name="nip" value="{{ $user->nip }}" required class="form-control"/>
 				</div>
 				
 				<div class="form-group col-md-6">
@@ -36,6 +36,11 @@
 				<div class="form-group col-md-6">
 					<label class="font-weight-bold">Nama Lengkap</label>
 					<input autocomplete="off" type="text" name="nama" value="{{ $user->nama }}" required class="form-control"/>
+				</div>
+				
+				<div class="form-group col-md-6">
+					<label class="font-weight-bold">Tugas</label>
+					<input autocomplete="off" type="text" name="tugas" value="{{ $user->tugas }}" class="form-control"/>
 				</div>
 				
 				<div class="form-group col-md-6">
