@@ -17,8 +17,8 @@
 		<div class="table-responsive">
 			<table class="table table-bordered" width="100%" cellspacing="0">
 				<tr>
-					<th class="bg-light">NIP</th>
-					<td>{{ $user->nip }}</td>
+					<th class="bg-light">E-Mail</th>
+					<td>{{ $user->email }}</td>
 				</tr>
 				<tr>
 					<th class="bg-light">Username</th>
@@ -31,10 +31,6 @@
 				<tr>
 					<th class="bg-light">Nama Lengkap</th>
 					<td>{{ $user->nama }}</td>
-				</tr>
-				<tr>
-					<th class="bg-light">Tugas</th>
-					<td>{{ $user->tugas }}</td>
 				</tr>
 				<tr>
 					<th class="bg-light">Level</th>

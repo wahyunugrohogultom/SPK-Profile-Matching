@@ -15,7 +15,7 @@ class PerhitunganController extends Controller
     {
         $id_user_level = session('log.id_user_level');
         
-        if ($id_user_level == 3) {
+        if ($id_user_level != 1) {
             ?>
             <script>
                 window.location='<?php echo url("Dashboard"); ?>'
@@ -25,8 +25,8 @@ class PerhitunganController extends Controller
         }
 
         $data['page'] = "Perhitungan";
-        $data['data_alternatif'] = AlternatifModel::all();
-        $data['data_aspek'] = AspekModel::all();
+        $data['alternatifs'] = AlternatifModel::all();
+        $data['aspeks'] = AspekModel::all();
         return view('perhitungan.index', $data);
     }
 }

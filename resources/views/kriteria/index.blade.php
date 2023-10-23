@@ -26,10 +26,9 @@
     <!-- /.card-header -->
     <div class="card-header py-3">
         <div class="d-sm-flex align-items-center justify-content-between">
-            <h6 class="m-0 font-weight-bold text-primary"> {{ $key->keterangan }}</h6>
-            @if(session('log.id_user_level') == '1')
-                <a href="#tambah{{ $key->id_aspek }}" data-toggle="modal" class="btn btn-sm btn-success"> Tambah Kriteria </a>
-            @endif
+            <h6 class="m-0 font-weight-bold text-primary"> {{ $key->keterangan }} ({{ $key->kode_aspek }})</h6>
+            
+            <a href="#tambah{{ $key->id_aspek }}" data-toggle="modal" class="btn btn-sm btn-success"> Tambah Data </a>
         </div>
     </div>
     
@@ -84,9 +83,7 @@
 						<th>Nama Kriteria</th>
 						<th>Nilai</th>
 						<th>Jenis</th>
-                        @if(session('log.id_user_level') == '1')
                         <th width="15%">Aksi</th>
-                        @endif
                     </tr>
                 </thead>
                 <tbody>
@@ -102,14 +99,12 @@
                         <td align="left">{{ $key->deskripsi }}</td>
                         <td>{{ $key->nilai }}</td>
                         <td>{{ $key->jenis }}</td>
-                        @if(session('log.id_user_level') == '1')
                         <td>
                             <div class="btn-group" role="group">
-                                <a data-toggle="modal" title="Edit Kriteria" href="#editsk{{ $key->id_kriteria }}" class="btn btn-warning btn-sm"><i class="fa fa-edit"></i></a>
-                                <a data-toggle="tooltip" data-placement="bottom" title="Hapus Kriteria" href="{{ url('Kriteria/destroy/'.$key->id_kriteria) }}" onclick="return confirm('Apakah anda yakin untuk menghapus data ini')" class="btn btn-danger btn-sm"><i class="fa fa-trash"></i></a>
+                                <a data-toggle="modal" title="Edit Data" href="#editsk{{ $key->id_kriteria }}" class="btn btn-warning btn-sm"><i class="fa fa-edit"></i></a>
+                                <a data-toggle="tooltip" data-placement="bottom" title="Hapus Data" href="{{ url('Kriteria/destroy/'.$key->id_kriteria) }}" onclick="return confirm('Apakah anda yakin untuk menghapus data ini')" class="btn btn-danger btn-sm"><i class="fa fa-trash"></i></a>
                             </div>
                         </td>
-                        @endif
                     </tr>
 
                     <!-- Modal -->

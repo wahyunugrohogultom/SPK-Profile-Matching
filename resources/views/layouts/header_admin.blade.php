@@ -8,7 +8,7 @@
     <meta name="description" content="">
     <meta name="author" content="">
 
-    <title>SPK SDN 73</title>
+    <title>Sistem Pendukung Keputusan Metode PM</title>
 
     <!-- Custom fonts for this template-->
     <link href="{{ asset('vendor/fontawesome-free/css/all.min.css') }}" rel="stylesheet" type="text/css">
@@ -18,6 +18,8 @@
     <link href="{{ asset('css/sb-admin-2.min.css') }}" rel="stylesheet">
 
     <link href="{{ asset('vendor/datatables/dataTables.bootstrap4.min.css') }}" rel="stylesheet">
+    <link rel="shortcut icon" href="{{ asset('img/favicon.ico') }}" type="image/x-icon">
+    <link rel="icon" href="{{ asset('img/favicon.ico') }}" type="image/x-icon">
 </head>
 
 <body id="page-top">
@@ -35,9 +37,9 @@
 
             <li class="nav-item">
                 <a class="nav-link">
-                    <b>
+                    <span>
                         {{ session('log.nama') }}
-                    </b>
+                    </span>
                 </a>
             </li>
 
@@ -89,38 +91,6 @@
             @endif
 
             @if(session('log.id_user_level') == '2')
-            <li class="nav-item {{ $page == 'Aspek' ? 'active' : '' }}">
-                <a class="nav-link" href="{{ url('Aspek') }}">
-                    <span>Data Aspek</span>
-                </a>
-            </li>
-
-            <li class="nav-item {{ $page == 'Kriteria' ? 'active' : '' }}">
-                <a class="nav-link" href="{{ url('Kriteria') }}">
-                    <span>Data Kriteria</span>
-                </a>
-            </li>
-
-            <li class="nav-item {{ $page == 'Alternatif' ? 'active' : '' }}">
-                <a class="nav-link" href="{{ url('Alternatif') }}">
-                    <span>Data Alternatif</span>
-                </a>
-            </li>
-
-            <li class="nav-item {{ $page == 'Perhitungan' ? 'active' : '' }}">
-                <a class="nav-link" href="{{ url('Perhitungan') }}">
-                    <span>Data Perhitungan</span>
-                </a>
-            </li>
-
-            <li class="nav-item {{ $page == 'Hasil' ? 'active' : '' }}">
-                <a class="nav-link" href="{{ url('Hasil') }}">
-                    <span>Data Hasil Akhir</span>
-                </a>
-            </li>
-            @endif
-
-            @if(session('log.id_user_level') == '3')
             <li class="nav-item {{ $page == 'Hasil' ? 'active' : '' }}">
                 <a class="nav-link" href="{{ url('Hasil') }}">
                     <span>Data Hasil Akhir</span>
@@ -129,14 +99,6 @@
             @endif
 
             @if(session('log.id_user_level') == '1')
-            <li class="nav-item {{ $page == 'User' ? 'active' : '' }}">
-                <a class="nav-link" href="{{ url('User') }}">
-                    <span>Data User</span>
-                </a>
-            </li>
-            @endif
-
-            @if(session('log.id_user_level') == '2')
             <li class="nav-item {{ $page == 'User' ? 'active' : '' }}">
                 <a class="nav-link" href="{{ url('User') }}">
                     <span>Data User</span>

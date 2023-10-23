@@ -9,7 +9,7 @@ class UserModel extends Model
 {
     protected $table = 'user';
     protected $primaryKey = 'id_user';
-    protected $fillable = ['id_user_level','nama','nip','username','password','tugas'];
+    protected $fillable = ['id_user_level','nama','email','username','password','nip','tugas'];
     public $timestamps = false;
 
     public static function get_user()

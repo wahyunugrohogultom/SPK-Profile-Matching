@@ -2,9 +2,8 @@
 
 <div class="d-sm-flex align-items-center justify-content-between mb-4">
     <h1 class="h3 mb-0 text-gray-800"> Data Hasil Akhir</h1>
-	@if(session('log.id_user_level') == '1')
-    <a href="{{ url('Laporan') }}" class="btn btn-primary">Cetak Hasil </a>
-    @endif
+	
+    <a href="{{ url('Laporan') }}" class="btn btn-primary">Cetak Data </a>
 </div>
 
 <div class="card shadow mb-4">

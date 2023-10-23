@@ -11,7 +11,7 @@ class AspekController extends Controller
     {
         $id_user_level = session('log.id_user_level');
         
-        if ($id_user_level == 3) {
+        if ($id_user_level != 1) {
             ?>
             <script>
                 window.location='<?php echo url("Dashboard"); ?>'

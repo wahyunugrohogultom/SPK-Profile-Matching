@@ -4,27 +4,27 @@
 
 //Matrix Keputusan (X)
 $matriks_x = array();
-foreach($data_aspek as $aspek):
-	foreach($data_alternatif as $alternatif):
-		$data_kriteria = \App\Models\KriteriaModel::data_kriteria($aspek->id_aspek);
-		foreach($data_kriteria as $kriteria):
+foreach($aspeks as $aspek):
+	foreach($alternatifs as $alternatif):
+		$kriterias = \App\Models\KriteriaModel::data_kriteria($aspek->id_aspek);
+		foreach($kriterias as $kriteria):
 			$id_aspek = $aspek->id_aspek;
 			$id_alternatif = $alternatif->id_alternatif;
 			$id_kriteria = $kriteria->id_kriteria;
-			$pencocokan_data = \App\Models\PerhitunganModel::data_nilai($id_alternatif, $id_aspek, $id_kriteria);
-        	if(!empty($pencocokan_data['nilai'])){$nilai = $pencocokan_data['nilai'];}else{$nilai = 0;}	
+			$data_pencocokan = \App\Models\PerhitunganModel::data_nilai($id_alternatif, $id_aspek, $id_kriteria);
+        	if(!empty($data_pencocokan['nilai'])){$nilai = $data_pencocokan['nilai'];}else{$nilai = 0;}	
 			$matriks_x[$id_kriteria][$id_alternatif] = $nilai;
 		endforeach;
 	endforeach;
 endforeach;
 
-//Mencari & Konversi GAP
-$mencari_gap = array();
+//Menghitung & Konversi GAP
+$menghitung_gap = array();
 $konversi_gap = array();
-foreach($data_aspek as $aspek):
-	foreach($data_alternatif as $alternatif):
-		$data_kriteria = \App\Models\KriteriaModel::data_kriteria($aspek->id_aspek);
-		foreach($data_kriteria as $kriteria):
+foreach($aspeks as $aspek):
+	foreach($alternatifs as $alternatif):
+		$kriterias = \App\Models\KriteriaModel::data_kriteria($aspek->id_aspek);
+		foreach($kriterias as $kriteria):
 			$id_alternatif = $alternatif->id_alternatif;
 			$id_kriteria = $kriteria->id_kriteria;
 			$nilai = $kriteria->nilai;
@@ -50,7 +50,7 @@ foreach($data_aspek as $aspek):
 			}elseif($selisih == "-4"){
 				$nilai_bobot = 1;
 			}
-			$mencari_gap[$id_kriteria][$id_alternatif] = $selisih;
+			$menghitung_gap[$id_kriteria][$id_alternatif] = $selisih;
 			$konversi_gap[$id_kriteria][$id_alternatif] = $nilai_bobot;
 		endforeach;
 	endforeach;
@@ -59,20 +59,20 @@ endforeach;
 // NCF NSF
 $ncf = array();
 $nsf = array();
-$t_perhitungan = array();
+$t_perh = array();
 $t_nilai = array();
-foreach($data_alternatif as $alternatif):
+foreach($alternatifs as $alternatif):
 	$total_nilai = 0;
 	$id_alternatif = $alternatif->id_alternatif;
-	foreach($data_aspek as $aspek):
+	foreach($aspeks as $aspek):
 		$id_aspek = $aspek->id_aspek;
 		$nocf = 0;
 		$nosf = 0;
 		$totalncf = 0;
 		$totalnsf = 0;
 		
-		$data_kriteria = \App\Models\KriteriaModel::data_kriteria($aspek->id_aspek);
-		foreach($data_kriteria as $kriteria){
+		$kriterias = \App\Models\KriteriaModel::data_kriteria($aspek->id_aspek);
+		foreach($kriterias as $kriteria){
 			$type_kriteria = $kriteria->jenis;
 			if($type_kriteria == 'Core Factor'){
 				$id_kriteria = $kriteria->id_kriteria;
@@ -96,7 +96,7 @@ foreach($data_alternatif as $alternatif):
 		$tn = ($t_cf*$bobot_cf)+($t_sf*$bobot_sf);
 		$ncf[$id_aspek][$id_alternatif] = $t_cf;
 		$nsf[$id_aspek][$id_alternatif] = $t_sf;
-		$t_perhitungan[$id_aspek][$id_alternatif] = $tn;
+		$t_perh[$id_aspek][$id_alternatif] = $tn;
 		
 		$p_aspek = $tn*$persentase;
 		$total_nilai += $p_aspek;
@@ -109,7 +109,7 @@ endforeach;
     <h1 class="h3 mb-0 text-gray-800"></i> Data Perhitungan</h1>
 </div>
 
-@foreach($data_aspek as $aspek)
+@foreach($aspeks as $aspek)
 <div class="card shadow mb-4">
     <!-- /.card-header -->
     <div class="card-header py-3">
@@ -133,7 +133,7 @@ endforeach;
 				<tbody>
 					<?php 
 						$no=1;
-						foreach ($data_alternatif as $alternatif): ?>
+						foreach ($alternatifs as $alternatif): ?>
 					<tr align="center">
 						<td><?= $no; ?></td>
 						<td align="left"><?= $alternatif->nama ?></td>
@@ -159,7 +159,7 @@ endforeach;
 </div>
 @endforeach
 
-@foreach($data_aspek as $aspek)
+@foreach($aspeks as $aspek)
 <div class="card shadow mb-4">
     <!-- /.card-header -->
     <div class="card-header py-3">
@@ -183,7 +183,7 @@ endforeach;
 				<tbody>
 					<?php 
 						$no=1;
-						foreach ($data_alternatif as $alternatif): ?>
+						foreach ($alternatifs as $alternatif): ?>
 					<tr align="center">
 						<td><?= $no; ?></td>
 						<td align="left"><?= $alternatif->nama ?></td>
@@ -193,7 +193,7 @@ endforeach;
 							$id_alternatif = $alternatif->id_alternatif;
 							$id_kriteria = $kriteria->id_kriteria;
 							echo '<td>';
-							echo $mencari_gap[$id_kriteria][$id_alternatif];
+							echo $menghitung_gap[$id_kriteria][$id_alternatif];
 							echo '</td>';
 						endforeach
 						?>
@@ -277,7 +277,7 @@ endforeach;
 	</div>
 </div>
 
-@foreach($data_aspek as $aspek)
+@foreach($aspeks as $aspek)
 <div class="card shadow mb-4">
     <!-- /.card-header -->
     <div class="card-header py-3">
@@ -301,7 +301,7 @@ endforeach;
 				<tbody>
 					<?php 
 						$no=1;
-						foreach ($data_alternatif as $alternatif): ?>
+						foreach ($alternatifs as $alternatif): ?>
 					<tr align="center">
 						<td><?= $no; ?></td>
 						<td align="left"><?= $alternatif->nama ?></td>
@@ -327,7 +327,7 @@ endforeach;
 </div>
 @endforeach
 
-@foreach($data_aspek as $aspek)
+@foreach($aspeks as $aspek)
 <div class="card shadow mb-4">
     <!-- /.card-header -->
     <div class="card-header py-3">
@@ -349,7 +349,7 @@ endforeach;
 				<tbody>
 					<?php 
 						$no=1;
-						foreach ($data_alternatif as $alternatif): ?>
+						foreach ($alternatifs as $alternatif): ?>
 					<tr align="center">
 						<td><?= $no; ?></td>
 						<td align="left"><?= $alternatif->nama ?></td>
@@ -367,7 +367,7 @@ endforeach;
 						</td>
 						<td>
 						<?php
-						echo $t_perhitungan[$id_aspek][$id_alternatif];
+						echo $t_perh[$id_aspek][$id_alternatif];
 						?>
 						</td>
 					</tr>
@@ -396,7 +396,7 @@ endforeach;
 						<th width="5%" rowspan="2">No</th>
 						<th>Alternatif</th>
 						<?php
-						foreach ($data_aspek as $aspek): ?>
+						foreach ($aspeks as $aspek): ?>
 						<th><?= $aspek->keterangan ?> (<?= $aspek->persentase ?>%)</th>
 						<?php endforeach ?>
 						<th>Nilai Total</th>
@@ -405,18 +405,18 @@ endforeach;
 				<tbody>
 					<?php 
 						$no=1;
-						foreach ($data_alternatif as $alternatif): 
+						foreach ($alternatifs as $alternatif): 
 						$id_alternatif = $alternatif->id_alternatif;
 						?>
 					<tr align="center">
 						<td><?= $no; ?></td>
 						<td align="left"><?= $alternatif->nama ?></td>
-						<?php foreach($data_aspek as $aspek){
+						<?php foreach($aspeks as $aspek){
 							$id_aspek = $aspek->id_aspek;
 						?>
 						<td>
 						<?php
-						echo $t_perhitungan[$id_aspek][$id_alternatif];
+						echo $t_perh[$id_aspek][$id_alternatif];
 						?>
 						</td>
 						<?php } ?>

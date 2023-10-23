@@ -11,7 +11,7 @@ class UserController extends Controller
     {
         $id_user_level = session('log.id_user_level');
         
-        if ($id_user_level == 3) {
+        if ($id_user_level != 1) {
             ?>
             <script>
                 window.location='<?php echo url("Dashboard"); ?>'
@@ -58,7 +58,7 @@ class UserController extends Controller
 
         $this->validate($request, [
             'nama' => 'required',
-            'nip' => 'required',
+            'email' => 'required',
             'privilege' => 'required',
             'username' => 'required|unique:user',
             'password' => 'required',
@@ -67,10 +67,9 @@ class UserController extends Controller
         $data = [
             'id_user_level' => $request->input('privilege'),
             'nama' => $request->input('nama'),
-            'nip' => $request->input('nip'),
+            'email' => $request->input('email'),
             'username' => $request->input('username'),
-            'password' => md5($request->input('password')),
-            'tugas' => $request->input('tugas')
+            'password' => md5($request->input('password'))
         ];
 
         $result = UserModel::create($data);
@@ -88,7 +87,7 @@ class UserController extends Controller
     {
         $id_user_level = session('log.id_user_level');
         
-        if ($id_user_level == 3) {
+        if ($id_user_level != 1) {
             ?>
             <script>
                 window.location='<?php echo url("Dashboard"); ?>'
@@ -107,7 +106,7 @@ class UserController extends Controller
     {
         $id_user_level = session('log.id_user_level');
         
-        if ($id_user_level == 3) {
+        if ($id_user_level != 1) {
             ?>
             <script>
                 window.location='<?php echo url("Dashboard"); ?>'
@@ -126,7 +125,7 @@ class UserController extends Controller
     {
         $id_user_level = session('log.id_user_level');
         
-        if ($id_user_level == 3) {
+        if ($id_user_level != 1) {
             ?>
             <script>
                 window.location='<?php echo url("Dashboard"); ?>'
@@ -137,7 +136,7 @@ class UserController extends Controller
 
         $this->validate($request, [
             'nama' => 'required',
-            'nip' => 'required',
+            'email' => 'required',
             'privilege' => 'required',
             'username' => 'required',
             'password' => 'required',
@@ -146,10 +145,9 @@ class UserController extends Controller
         $data = [
             'id_user_level' => $request->input('privilege'),
             'nama' => $request->input('nama'),
-            'nip' => $request->input('nip'),
+            'email' => $request->input('email'),
             'username' => $request->input('username'),
-            'password' => md5($request->input('password')),
-            'tugas' => $request->input('tugas')
+            'password' => md5($request->input('password'))
         ];
 
         $user = UserModel::findOrFail($id_user);

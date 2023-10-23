@@ -11,11 +11,9 @@
 <div class="card shadow mb-4">
     <!-- /.card-header -->
     <div class="card-header py-3">
-        <div class="d-sm-flex align-items-center justify-content-between">
-            <h6 class="m-0 font-weight-bold text-primary"> Daftar Aspek</h6>
-            @if(session('log.id_user_level') == '1')
-                <a href="{{ url('Aspek/tambah') }}" class="btn btn-sm btn-success"> Tambah Aspek </a>
-            @endif
+        <div class="row">
+            <h6 class="m-0 font-weight-bold text-primary"><i class="fa fa-table"></i> Daftar Data Aspek</h6>
+            <a href="{{ url('Aspek/tambah') }}" class="btn btn-success">Tambah Data </a>
         </div>
     </div>
 
@@ -30,9 +28,7 @@
 						<th>Persentase (%)</th>
 						<th>Bobot Core Factore (%)</th>
 						<th>Bobot Secondary Factor (%)</th>
-                        @if(session('log.id_user_level') == '1')
                         <th width="15%">Aksi</th>
-                        @endif
                     </tr>
                 </thead>
                 <tbody>
@@ -47,14 +43,12 @@
                             <td>{{ $data->persentase }}</td>
                             <td>{{ $data->bobot_cf }}</td>
                             <td>{{ $data->bobot_sf }}</td>
-                            @if(session('log.id_user_level') == '1')
                             <td>
                                 <div class="btn-group" role="group">
-                                    <a data-toggle="tooltip" data-placement="bottom" title="Edit Aspek" href="{{ url('Aspek/edit/'.$data->id_aspek) }}" class="btn btn-warning btn-sm"><i class="fa fa-edit"></i></a>
-                                    <a data-toggle="tooltip" data-placement="bottom" title="Hapus Aspek" href="{{ url('Aspek/destroy/'.$data->id_aspek) }}" onclick="return confirm('Apakah anda yakin untuk menghapus data ini')" class="btn btn-danger btn-sm"><i class="fa fa-trash"></i></a>
+                                    <a data-toggle="tooltip" data-placement="bottom" title="Edit Data" href="{{ url('Aspek/edit/'.$data->id_aspek) }}" class="btn btn-warning btn-sm"><i class="fa fa-edit"></i></a>
+                                    <a data-toggle="tooltip" data-placement="bottom" title="Hapus Data" href="{{ url('Aspek/destroy/'.$data->id_aspek) }}" onclick="return confirm('Apakah anda yakin untuk menghapus data ini')" class="btn btn-danger btn-sm"><i class="fa fa-trash"></i></a>
                                 </div>
                             </td>
-                            @endif
                         </tr>
                         @php
                             $no++;

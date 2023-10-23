@@ -14,7 +14,7 @@
 
 <div class="card shadow mb-4">
     <div class="card-header py-3">
-        <h6 class="m-0 font-weight-bold text-primary"> Tambah Aspek</h6>
+        <h6 class="m-0 font-weight-bold text-primary"> Tambah Data Aspek</h6>
     </div>
 
     <form action="{{ url('Aspek/simpan') }}" method="POST">
