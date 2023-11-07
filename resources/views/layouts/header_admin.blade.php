@@ -16,7 +16,6 @@
 
     <!-- Custom styles for this template-->
     <link href="{{ asset('css/sb-admin-2.min.css') }}" rel="stylesheet">
-
     <link href="{{ asset('vendor/datatables/dataTables.bootstrap4.min.css') }}" rel="stylesheet">
 </head>
 
@@ -26,9 +25,11 @@
         <!-- Sidebar -->
         <ul class="navbar-nav bg-gradient-secondary sidebar sidebar-dark accordion" id="accordionSidebar">
             <!-- Sidebar - Brand -->
-            <a class="sidebar-brand d-flex justify-content-center" href="{{ url('Dashboard') }}">
-                
-                <div class="sidebar-brand-text">SDN 73</div>
+            <a class="sidebar-brand d-flex align-items-center justify-content-center" href="{{ url('Dashboard') }}">
+                <div class="sidebar-brand-icon">
+                    <i ><img src="{{ asset('img/logo.png') }}" width="60" height="60"></i>
+                </div>
+                <div class="sidebar-brand-text mx-3">SDN 73</div>
             </a>
             <!-- Divider -->
             <hr class="sidebar-divider my-0">

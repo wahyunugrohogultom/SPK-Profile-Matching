@@ -21,7 +21,7 @@
 			<div class="row">
 				<div class="form-group col-md-6">
 					<label class="font-weight-bold">NIP</label>
-					<input autocomplete="off" type="number" name="nip" required class="form-control"/>
+					<input autocomplete="off" type="number" name="nip" class="form-control"/>
 				</div>
 				
 				<div class="form-group col-md-6">

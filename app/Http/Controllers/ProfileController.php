@@ -18,17 +18,17 @@ class ProfileController extends Controller
     public function update(Request $request, $id_user)
     {
         $this->validate($request, [
-            'email' => 'required',
             'nama' => 'required',
             'username' => 'required',
             'password' => 'required',
         ]);
 
         $data = [
-            'email' => $request->input('email'),
+            'nip' => $request->input('nip'),
             'nama' => $request->input('nama'),
             'username' => $request->input('username'),
-            'password' => md5($request->input('password'))
+            'password' => md5($request->input('password')),
+            'tugas' => $request->input('tugas')
         ];
 
         $user = UserModel::findOrFail($id_user);

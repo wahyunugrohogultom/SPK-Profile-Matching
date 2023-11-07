@@ -13,14 +13,15 @@
     <link href="{{ asset('vendor/fontawesome-free/css/all.min.css') }}" rel="stylesheet" type="text/css">
     <link href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i" rel="stylesheet">
 
+    
     <!-- Custom styles for this template-->
     <link href="{{ asset('css/sb-admin-2.min.css') }}" rel="stylesheet">
 </head>
 
-<body class="bg-gradient-primary">
+<body class="bg-gradient-danger">
     <nav class="navbar navbar-expand-lg navbar-dark bg-white shadow-lg pb-3 pt-3 font-weight-bold">
         <div class="container">
-            <a class="navbar-brand text-primary" style="font-weight: 900;" href="{{ url('/') }}"> SPK SDN 73 Bengkulu</a>
+            <a class="navbar-brand text-danger" style="font-weight: 900;" href="{{ url('/') }}"> <img src="../img/logo.png" class="img-fluid" alt="SDN 73 Kota" height="50" width="50"> SPK SDN 73 Bengkulu</a>
         </div>
     </nav>
 
@@ -52,11 +53,19 @@
                                         <div class="form-group">
                                             <input required autocomplete="off" type="password" class="form-control form-control-user" id="exampleInputPassword" name="password" placeholder="Password" />
                                         </div>
-                                        <button name="submit" type="submit" class="btn btn-primary btn-user btn-block"><i class="fas fa-fw fa-sign-in-alt mr-1"></i> Masuk</button>
+                                        <button name="submit" type="submit" class="btn btn-danger btn-user btn-block"><i class="fas fa-fw fa-sign-in-alt mr-1"></i> Masuk</button>
                                     </form>
                                 </div>
                             </div>
                         </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-xl-6 col-lg-6 col-md-6 mt-2">
+                <div class="card bg-none o-hidden border-0 my-5 text-white" style="background: none;">
+                    <div class="text-justify card-body p-0">
+                        <img src="../img/fotosekolah.png" class="img-fluid" alt="SDN 73 Kota">
                     </div>
                 </div>
             </div>

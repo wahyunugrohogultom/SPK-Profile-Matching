@@ -29,6 +29,7 @@ foreach($data_aspek as $aspek):
 			$id_kriteria = $kriteria->id_kriteria;
 			$nilai = $kriteria->nilai;
 			
+			// Perulangan untuk mencari GAP
 			$x = $matriks_x[$id_kriteria][$id_alternatif];
 			$selisih = $x-$nilai;
 			if($selisih == "0"){
@@ -50,8 +51,14 @@ foreach($data_aspek as $aspek):
 			}elseif($selisih == "-4"){
 				$nilai_bobot = 1;
 			}
+
+			// Mencari Selisih Nilai
 			$mencari_gap[$id_kriteria][$id_alternatif] = $selisih;
-			$konversi_gap[$id_kriteria][$id_alternatif] = $nilai_bobot;
+			// End Mencari Selisih Nilai
+
+			// Konversi Selisih Nilai ke Bobot
+			$konversi_gap[$id_kriteria][$id_alternatif] = $nilai_bobot;	
+			// End Konversi Selisih Nilai ke Bobot
 		endforeach;
 	endforeach;
 endforeach;
@@ -59,7 +66,7 @@ endforeach;
 // NCF NSF
 $ncf = array();
 $nsf = array();
-$t_perhitungan = array();
+$total_perhitungan = array();
 $t_nilai = array();
 foreach($data_alternatif as $alternatif):
 	$total_nilai = 0;
@@ -72,6 +79,7 @@ foreach($data_alternatif as $alternatif):
 		$totalnsf = 0;
 		
 		$data_kriteria = \App\Models\KriteriaModel::data_kriteria($aspek->id_aspek);
+		// Melakukan Perulangan Untuk Melakukan Pengelompokan Berdasarkan Jenis Kriteria
 		foreach($data_kriteria as $kriteria){
 			$type_kriteria = $kriteria->jenis;
 			if($type_kriteria == 'Core Factor'){
@@ -87,19 +95,31 @@ foreach($data_alternatif as $alternatif):
 				$nosf += 1;
 				$totalnsf += $nilaisf;
 			}
-		}
+		}// End Perulangan Kriteria
+
+		// Mengambil Bobot CF & SF
 		$bobot_cf = $aspek->bobot_cf/100;
 		$bobot_sf = $aspek->bobot_sf/100;
 		$persentase= $aspek->persentase/100;
-		$t_cf = $totalncf/$nocf;
-		$t_sf = $totalnsf/$nosf;
-		$tn = ($t_cf*$bobot_cf)+($t_sf*$bobot_sf);
-		$ncf[$id_aspek][$id_alternatif] = $t_cf;
-		$nsf[$id_aspek][$id_alternatif] = $t_sf;
-		$t_perhitungan[$id_aspek][$id_alternatif] = $tn;
+		// End Mengambil Bobot CF & SF
+
+		// Menghitung Total CF & SF
+		$total_cf = $totalncf/$nocf;
+		$total_sf = $totalnsf/$nosf;
+		// End Menghitung Total CF & SF
+
+		// Menghitung Total Nilai
+		$tn = ($total_cf*$bobot_cf)+($total_sf*$bobot_sf);
+		$ncf[$id_aspek][$id_alternatif] = $total_cf;
+		$nsf[$id_aspek][$id_alternatif] = $total_sf;
+		$total_perhitungan[$id_aspek][$id_alternatif] = $tn;
+		// End Menghitung Total Nilai
 		
+		// Perhitungan Penentuan Rangking
 		$p_aspek = $tn*$persentase;
 		$total_nilai += $p_aspek;
+		// End Perhitungan Penentuan Rangking
+
 	endforeach;
 	$t_nilai[$id_alternatif] = $total_nilai;
 endforeach;
@@ -367,7 +387,7 @@ endforeach;
 						</td>
 						<td>
 						<?php
-						echo $t_perhitungan[$id_aspek][$id_alternatif];
+						echo $total_perhitungan[$id_aspek][$id_alternatif];
 						?>
 						</td>
 					</tr>
@@ -416,7 +436,7 @@ endforeach;
 						?>
 						<td>
 						<?php
-						echo $t_perhitungan[$id_aspek][$id_alternatif];
+						echo $total_perhitungan[$id_aspek][$id_alternatif];
 						?>
 						</td>
 						<?php } ?>

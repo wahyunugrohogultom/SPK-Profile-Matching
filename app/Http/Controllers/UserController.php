@@ -58,7 +58,6 @@ class UserController extends Controller
 
         $this->validate($request, [
             'nama' => 'required',
-            'nip' => 'required',
             'privilege' => 'required',
             'username' => 'required|unique:user',
             'password' => 'required',
@@ -137,7 +136,6 @@ class UserController extends Controller
 
         $this->validate($request, [
             'nama' => 'required',
-            'nip' => 'required',
             'privilege' => 'required',
             'username' => 'required',
             'password' => 'required',

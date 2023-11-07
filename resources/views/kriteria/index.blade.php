@@ -26,7 +26,7 @@
     <!-- /.card-header -->
     <div class="card-header py-3">
         <div class="d-sm-flex align-items-center justify-content-between">
-            <h6 class="m-0 font-weight-bold text-primary"> {{ $key->keterangan }}</h6>
+            <h6 class="m-0 font-weight-bold text-primary"> Aspek {{ $key->keterangan }}</h6>
             @if(session('log.id_user_level') == '1')
                 <a href="#tambah{{ $key->id_aspek }}" data-toggle="modal" class="btn btn-sm btn-success"> Tambah Kriteria </a>
             @endif
@@ -57,9 +57,9 @@
 							<input autocomplete="off" type="number" id="nilai" min="1" max="5" name="nilai" class="form-control" required>
 						</div>
 						<div class="form-group">
-							<label class="font-weight-bold">Jenis Kriteria</label>
+							<label class="font-weight-bold">Tipe Kriteria</label>
 							<select name="jenis" class="form-control" required>
-								<option value="">--Pilih Jenis Kriteria--</option>
+								<option value="">--Pilih Tipe Kriteria--</option>
 								<option value="Core Factor">Core Factor</option>
 								<option value="Secondary Factor">Secondary Factor</option>						
 							</select>

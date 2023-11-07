@@ -16,7 +16,7 @@
                 <div class="card-body">
                     <div class="row no-gutters align-items-center">
                         <div class="col mr-2">
-                            <div class="h5 mb-0 font-weight-bold text-gray-800"><a href="{{ url('Aspek') }}" class="text-secondary text-decoration-none"> Data Aspek</a></div>
+                            <div class="h5 mb-0 font-weight-bold text-gray-800"><a href="{{ url('Aspek') }}" class="text-secondary text-decoration-none"><?php $jumlah = \App\Models\AspekModel::count() ?> {{$jumlah}} Aspek</a></div>
                         </div>
                         <div class="col-auto">
                         </div>
@@ -30,7 +30,7 @@
                 <div class="card-body">
                     <div class="row no-gutters align-items-center">
                         <div class="col mr-2">
-                            <div class="h5 mb-0 font-weight-bold text-gray-800"><a href="{{ url('Kriteria') }}" class="text-secondary text-decoration-none">Data Kriteria</a></div>
+                            <div class="h5 mb-0 font-weight-bold text-gray-800"><a href="{{ url('Kriteria') }}" class="text-secondary text-decoration-none"> <?php $jumlah = \App\Models\KriteriaModel::count() ?> {{$jumlah}} Kriteria</a></div>
                         </div>
                         <div class="col-auto">
                         </div>
@@ -44,7 +44,7 @@
                 <div class="card-body">
                     <div class="row no-gutters align-items-center">
                         <div class="col mr-2">
-                            <div class="h5 mb-0 font-weight-bold text-gray-800"><a href="{{ url('Alternatif') }}" class="text-secondary text-decoration-none">Data Alternatif</a></div>
+                            <div class="h5 mb-0 font-weight-bold text-gray-800"><a href="{{ url('Alternatif') }}" class="text-secondary text-decoration-none"><?php $jumlah = \App\Models\AlternatifModel::count() ?> {{$jumlah}} Alternatif</a></div>
                         </div>
                         <div class="col-auto">
                         </div>
@@ -58,7 +58,7 @@
                 <div class="card-body">
                     <div class="row no-gutters align-items-center">
                         <div class="col mr-2">
-                            <div class="h5 mb-0 font-weight-bold text-gray-800"><a href="{{ url('Penilaian') }}" class="text-secondary text-decoration-none">Data Penilaian</a></div>
+                            <div class="h5 mb-0 font-weight-bold text-gray-800"><a href="{{ url('Penilaian') }}" class="text-secondary text-decoration-none"> Penilaian</a></div>
                         </div>
                         <div class="col-auto">
                         </div>

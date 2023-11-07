@@ -20,7 +20,7 @@
 				<input type="hidden" name="id_user" value="{{ $profile->id_user }}">
 				<div class="form-group col-md-6">
 					<label class="font-weight-bold">NIP</label>
-					<input autocomplete="off" type="email" name="email" value="{{ $profile->nip }}" required class="form-control">
+					<input autocomplete="off" type="number" name="nip" value="{{ $profile->nip }}" class="form-control">
 				</div>
 				
 				<div class="form-group col-md-6">
@@ -40,7 +40,7 @@
 
 				<div class="form-group col-md-6">
 					<label class="font-weight-bold">Tugas</label>
-					<input autocomplete="off" type="text" name="tugas" value="{{ $profile->tugas }}" required class="form-control">
+					<input autocomplete="off" type="text" name="tugas" value="{{ $profile->tugas }}" class="form-control">
 				</div>
 			</div>
 		</div>

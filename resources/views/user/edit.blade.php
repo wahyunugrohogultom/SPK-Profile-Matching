@@ -20,7 +20,7 @@
                 <input type="hidden" name="id_user" value="{{ $user->id_user }}">
 				<div class="form-group col-md-6">
 					<label class="font-weight-bold">NIP</label>
-					<input autocomplete="off" type="number" name="nip" value="{{ $user->nip }}" required class="form-control"/>
+					<input autocomplete="off" type="number" name="nip" value="{{ $user->nip }}" class="form-control"/>
 				</div>
 				
 				<div class="form-group col-md-6">
