@@ -22,7 +22,7 @@ use App\Http\Controllers\HasilController;
 use App\Http\Controllers\UserController;
 use App\Http\Controllers\ProfileController;
 
-Route::get('/', function () {return view('login');});
+Route::get('/', function () {return view('landing.landing');});
 
 /* Login */
 Route::get('/Login', [LoginController::class, 'index'])->name('login');
