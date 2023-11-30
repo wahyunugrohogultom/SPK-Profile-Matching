@@ -69,7 +69,7 @@ http://www.templatemo.com/tm-509-hydro
                <div class="row">
 
                     <div class="col-md-offset-1 col-md-5 col-sm-12">
-                         <h2>Visi, Misi Dan Tujuan</h2>
+                         <h2>Kepala Sekolah dan Daftar Guru</h2>
                     </div>
                     
                </div>
@@ -85,30 +85,7 @@ http://www.templatemo.com/tm-509-hydro
                     <div class="col-md-offset-1 col-md-10 col-sm-12">
                          <!-- BLOG THUMB -->
                          <div class="blog-detail-thumb">
-                              <h2>Visi</h2>
-
-                              <blockquote>"BERIMAN, BERILMU, BERPRESTASI DAN TERAMPIL"</blockquote>
-
-                              <h2>Misi</h2>
-
-                              <blockquote>
-                                   1. Menumbuh kembangkan penghayatan terhadap agama yang dianut dean mengamalkan dalam kegiatan sehari-hari
-                                   <br>2. Melaksanakan PBM dan bimbingan secara efektif, sehingga siswa dapat berkembang secara optimal sesuai dengan potensi yang dimiliki
-                                   <br>3. Menumbuh kembangkan semangat berprestasi, rajin belajar, suka bekerja keras dan gemar membaca.
-                                   <br>4. Menjaga dan meningkatkan kedisiplinan, ketertiban dan kewibawaan sekolah.
-                                   <br>5. Mendorong aktivitas dan kreativitas warga sekolah.
-                                   <br>6. Meningkatkan ketertiban komite sekolah dan masyarakat dalam memajukan pendidikan.
-                              </blockquote>
-
-                              <h2>Tujuan</h2>
-
-                              <blockquote>
-                                   1. Unggul dalam Keimanan.
-                                   <br>2. Unggul dalam lomba olahraga.
-                                   <br>3. Unggul dalam bidang seni.
-                                   <br>4. Unggul dalam ketaatan, kedisiplinan dan ketertiban.
-                                   <br>5. Unggul dalam kesediaan menerima dan memberi informasi tentang pembaharuan pendidikan.
-                              </blockquote>
+                            <iframe src="https://drive.google.com/file/d/1tu4XyL5M2jySYwmterkt9ISFmG65KZXB/preview" width="100%" height="1000"></iframe>
                          </div>
                     </div>
                     

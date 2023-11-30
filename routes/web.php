@@ -24,6 +24,10 @@ use App\Http\Controllers\ProfileController;
 
 Route::get('/', function () {return view('landing.landing');});
 
+Route::view('/detail', 'landing.detail');
+Route::view('/home', 'landing.landing');
+Route::view('/guru', 'landing.guru');
+
 /* Login */
 Route::get('/Login', [LoginController::class, 'index'])->name('login');
 Route::post('/proses_login', [LoginController::class, 'proses_login']);

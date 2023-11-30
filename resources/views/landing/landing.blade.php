@@ -49,11 +49,13 @@ http://www.templatemo.com/tm-509-hydro
                <!-- MENU LINKS -->
                <div class="collapse navbar-collapse">
                     <ul class="nav navbar-nav navbar-nav-first">
-                         <li><a href="#home" class="smoothScroll">Beranda</a></li>
-                         <li><a href="#about" class="smoothScroll">Profil</a></li>
-                         <li><a href="{{ url('Login') }}" class="smoothScroll">SPK Guru</a></li>
-                         <li><a href="#blog" class="smoothScroll">Visi & Misi</a></li>
-                         <li><a href="#work" class="smoothScroll">Galeri</a></li>
+                         <li><a href="#home" class="smoothScroll"><b>Beranda</b></a></li>
+                         <li><a href="#about" class="smoothScroll"><b>Profil</b></a></li>
+                         <li><a href="{{ url('Login') }}" class="smoothScroll"><b>SPK Guru</b></a></li>
+                         <li><a href="#blog" class="smoothScroll"><b>Visi & Misi</b></a></li>
+                         <li><a href="#work" class="smoothScroll"><b>Galeri</b></a></li>
+                         <li><a href="#guru" class="smoothScroll"><b>Daftar Guru</b></a></li>
+                         <li><a href="#ekstrakulikuler" class="smoothScroll"><b>Ekstrakulikuler</b></a></li>
                     </ul>
                </div>
           </div>
@@ -69,7 +71,7 @@ http://www.templatemo.com/tm-509-hydro
                     <div class="col-md-6 col-sm-12">
                          <div class="home-info">
                               <h1>Sekolah Dasar Negeri 73 Kota Bengkulu</h1>
-                              <h3>Singaran Pati Kota Bengkulu</h3>
+                              <h2>Singaran Pati Kota Bengkulu</h2>
                          </div>
                     </div>
 
@@ -97,7 +99,7 @@ http://www.templatemo.com/tm-509-hydro
                                    <h2>MARIDENTI ASNI, S.Pd</h2>
                                    <span class="line-bar">...</span>
                               </div>
-                              <p>Sebagai lembaga pendidikan, SD Negeri 73 Kota Bengkulu tanggap dengan perkembangan teknologi yang semakin berkembang pesat. Dengan dukungan SDM yang di miliki sekolah ini siap untuk berkompetisi dengan sekolah lain dalam pelayanan informasi publik. Teknologi Informasi Web khususnya, menjadi sarana bagi SD Negeri 73 Kota Bengkulu untuk memberi pelayanan informasi secara cepat, jelas, dan akuntable. Dari layanan ini pula, sekolah siap menerima saran dari semua pihak yang akhirnya dapat menjawab kebutuhan masyarakat.</p>
+                              <p text-align:justify>Sekolah Dasar Negeri 73 merupakan sekolah yang berada di Jalan Danau tes Nomor 43, Padang Nangka Kecamatan Singaran Pati Kota Bengkulu. Sekolah yang berada di dekat pusat kota dan juga dekat barak tentara yaitu kompi B Yonif 144. Sehingga begitu banyak latar belakang suku, dan bahasa di sekolah. Sekolah SD Negeri 73 Kota Bengkulu memiliki 7 kelas, 1 ruangan lab komputer, Aula, 1 Gudang, Total Siswa tersebut 116 siswa yang terdiri dari kelas 1 sampai 6 dan jumlah guru serta staf sebanyak 11 orang. Selain itu,kondisi bangunan sekolah memiliki 2 gedung yang dimana gedung 1 berada diatas dan gedung 2 berada di bawah dengan kondis terpisah yang dimana posisi gedung utama dan gedung kedua di batasi oleh jalan.</p>
                          </div>
                     </div>
 
@@ -125,7 +127,7 @@ http://www.templatemo.com/tm-509-hydro
 
                     <div class="col-md-12 col-sm-12">
                          <div class="section-title">
-                              <h2>Visi dan Misi</h2>
+                              <h2>Visi, Misi dan Tujuan</h2>
                               <span class="line-bar">...</span>
                          </div>
                     </div>
@@ -137,9 +139,9 @@ http://www.templatemo.com/tm-509-hydro
                                    <a href="#"><img src="../img/visi.jpg" class="img-responsive" alt=""></a>
                               </div>
                               <div class="media-body blog-info">
-                                   <h3>Visi</h3>
-                                   <p>"BERIMAN, BERILMU, BERPRESTASI DAN TERAMPIL</p>
-                                   <a href="{{ url('detail') }}" class="btn section-btn">View Detail</a>
+                                   <h3>Visi, Misi dan Tujuan</h3>
+                                   <p>"BERIMAN, BERILMU, BERPRESTASI DAN TERAMPIL"</p>
+                                   <a href="/detail" class="btn section-btn">View Detail</a>
                               </div>
                          </div>
                     </div>
@@ -200,6 +202,66 @@ http://www.templatemo.com/tm-509-hydro
                          </div>
                     </div>
 
+               </div>
+          </div>
+     </section>
+
+     <section id="guru" data-stellar-background-ratio="0.5">
+          <div class="container">
+               <div class="row">
+
+                    <div class="col-md-12 col-sm-12">
+                         <div class="section-title">
+                              <h2>Daftar Guru</h2>
+                              <span class="line-bar">...</span>
+                         </div>
+                    </div>
+
+                    <div class="col-md-12 col-sm-12">
+                         <!-- BLOG THUMB -->
+                         <div class="media blog-thumb">
+                              <div class="media-object media-left">
+                                   <a href="#"><img src="../img/guru.jpg" class="img-responsive" alt=""></a>
+                              </div>
+                              <div class="media-body blog-info">
+                                   <h3>Kepala Sekolah dan Guru</h3>
+                                   <p></p>
+                                   <a href="/guru" class="btn section-btn">View Detail</a>
+                              </div>
+                         </div>
+                    </div>
+                    
+               </div>
+          </div>
+     </section>
+
+     <section id="ekstrakulikuler" data-stellar-background-ratio="0.5">
+          <div class="container">
+               <div class="row">
+
+                    <div class="col-md-12 col-sm-12">
+                         <div class="section-title">
+                              <h2>Ekstrakulikuler</h2>
+                              <span class="line-bar">...</span>
+                         </div>
+                    </div>
+
+                    <div class="col-md-12 col-sm-12">
+                         <!-- BLOG THUMB -->
+                         <div class="media blog-thumb">
+                              <div class="media-object media-left">
+                                   <a href="#"><img src="../img/foto1.jpg" class="img-responsive" alt=""></a>
+                              </div>
+                              <div class="media-body blog-info">
+                                   <h3>Ekstrakulikuler SDN 73 Bengkulu</h3>
+                                   <p>1. Pramuka
+                                        <br>2. Paskibra
+                                        <br>3. PMR
+                                   </p>
+                              </div>
+                         </div>
+                    </div>
+                    
                </div>
           </div>
      </section>

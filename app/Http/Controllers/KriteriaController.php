@@ -25,6 +25,7 @@ class KriteriaController extends Controller
         $data['aspek'] = AspekModel::all();
         return view('kriteria.index', $data);
     }
+    
 
     public function simpan(Request $request)
     {
